@@ -1,4 +1,4 @@
-API tetting: API testing is a type of software testing that analyzes an application program interface (API) to verify it fulfills its expected functionality, security, performance and reliability
+API Testing: API testing is a type of software testing that analyzes an application program interface (API) to verify it fulfills its expected functionality, security, performance and reliability
 
 
 Rest API:
@@ -17,10 +17,10 @@ Each URL is called a request while the data sent back to you is called a respons
 
 Types of API Methods
 
-GET: The GET method is used to extract information from the given server using a given URI. While using GET request, it should only extract data and should have no other effect on the data.
-POST: A POST request is used to create a new entity. It can also be used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
-PUT: Create a new entity or update an existing one.
-DELETE: Removes all current representations of the target resource given by a URI.
+1. GET: The GET method is used to extract information from the given server using a given URI. While using GET request, it should only extract data and should have no other effect on the data.
+2. POST: A POST request is used to create a new entity. It can also be used to send data to the server, for example, customer information, file upload, etc. using HTML forms.
+3. PUT: Create a new entity or update an existing one.
+4. DELETE: Removes all current representations of the target resource given by a URI.
 
 
 Client-Server Architecture:
@@ -34,27 +34,27 @@ Application Layer(Business tier)
 Database Layer(Data tier)
 
 They are HTTP RESPONSE standard status code. Here are the most common ones
-200===OK==We received the request
-201 === Created===We received the request and created something. For example, we received a file upload request and a file is created.
-204===No content===Incorrect locale used
-300===The HTTP 300 Multiple Choices redirect status response code indicates that the request has more than one possible responses.
-400===Requitst error==Bad request===Incorrect parameters (input data)
-401===Unauthorized===Authentication error: invalid API key, miscalculated dev hash, etc. More details.
-500==Responce===Error===Please report a bug to support@oneskyapp.com 
-
+* 200===OK==We received the request
+* 201 === Created===We received the request and created something. For example, we received a file upload request and a file is created.
+* 204===No content===Incorrect locale used
+* 300===The HTTP 300 Multiple Choices redirect status response code indicates that the request has more than one possible responses.
+* 400===Request error==Bad request===Incorrect parameters (input data)
+* 401===Unauthorized===Authentication error: invalid API key, miscalculated dev hash, etc. More details.
+* 500==Response===Error===Please report a bug to support@oneskyapp.com
 
 ===============================================
 
 Postman : Manual API testing
 RestAssure: Automation testing
 
-Postman
+********* POSTMAN ******************
+
 Workspace: Used to maintain files/script
 Create new workspace >>> 
 Create collections (Contains no of folders and http requits) >>> 
 
-Create responce under 
-GET >>> Retrive the resource from database
+Create response under
+GET >>> Retrieve the resource from database
 POST >>> Create resource on database
 PUT >>> Update existing resource on database
 DELETE >>> Delete existing resource from database
@@ -71,18 +71,18 @@ cookies
 headers
 
 POST === https://reqres.in/api/users
-select 'body' otion then 'raw' option >>> select Json text
+select 'body' option then 'raw' option >>> select Json text
 
-Requist:
+Request:
 {
     "Neme": "DOn",
     "Job": "Trainee"
 } 
 
-Got responce === 201 Created
+Got response === 201 Created
 
 {
-    "Neme": "DOn",
+    "Name": "DOn",
     "Job": "Trainee",
     "id": "738",
     "createdAt": "2023-01-14T16:46:25.593Z"
@@ -92,15 +92,15 @@ Got responce === 201 Created
 PUT === https://reqres.in/api/users/738 === 738 is id respond from Post
 select 'body' otion then 'raw' option >>> select Json text
 send text === 
-Requist:
+Request:
 {
-    "Neme": "Boss",
+    "Name": "Boss",
     "Job": "Trainee"
 } 
 
-Got responce === 200 OK
+Got response === 200 OK
 {
-    "Neme": "Boss",
+    "Name": "Boss",
     "Job": "Trainee",
     "updatedAt": "2023-01-14T16:51:06.608Z"
 }
@@ -108,13 +108,13 @@ Got responce === 200 OK
 DELETE === https://reqres.in/api/users/738
 Click send
 
-Got responce == 204 No Content
+Got response == 204 No Content
 
 =========================================================
 
 Create Dummy API
 
-Needed softwares
+Needed software's
 
 1. NodeJS 
 2. npm
@@ -124,16 +124,14 @@ Needed softwares
 >>> run cmd "C:\Users\srikanth\Desktop\IT\API>json-server student.json"
 >>> http://localhost:3000/Student_Data
 
-
-
-=========================================
+===========================================================================================================
 API Response Validations (Adding tests)
 
 1. Status code
 2. Headers
 3. Cookies
-4. Responce time
-5. Responce body
+4. Response time
+5. Response body
 
 
 Chain framework: Contain certain number of framework. 
@@ -152,7 +150,7 @@ Please follow the below steps to write the HTTP Status code verification asserti
 
 5) Once the test is added, let’s try to execute this request again, and see the results of the test. Open the “Tests” tab in the response section and see the test/assertion validation message.
 
-==========
+=========================================================================================================
 TEST
 
 For expect single responce
